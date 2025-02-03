@@ -1,0 +1,689 @@
+@charset "UTF-8";
+* {
+  font-family: "Lato", serif;
+  font-style: normal;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container nav {
+  height: 100px;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  margin-bottom: -1px;
+}
+.container nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  gap: 55px;
+  padding: 0;
+  margin: 0;
+}
+.container nav ul li {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.container nav ul li::after {
+  content: "•";
+  color: #f89e16;
+  font-size: 25px;
+  position: relative;
+  left: 26px;
+}
+.container nav ul li:last-child::after {
+  content: "";
+}
+.container nav ul li.dropdown .submenu li::after {
+  content: "";
+}
+.container nav ul li a {
+  font-weight: 400;
+  color: black;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.container nav ul li a span {
+  font-weight: 400;
+  color: #f89e16;
+}
+.container nav ul li a:hover {
+  color: #f89e16;
+  transition: 0.4s ease;
+}
+.container nav .off-screen-menu {
+  background: #F2F2F2;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  width: 100%;
+  max-width: 450px;
+  position: fixed;
+  top: 0;
+  right: -450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease;
+  border-radius: 0 0 15px 15px;
+  z-index: 3;
+  overflow: auto;
+  padding-top: 90px;
+  box-sizing: border-box;
+  padding-bottom: 55px;
+}
+.container nav .off-screen-menu .logo {
+  margin-left: 35px;
+}
+.container nav .off-screen-menu .burger_desc {
+  width: 170px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #6E6E6E;
+  text-align: center;
+}
+.container nav .off-screen-menu .burger_gallery .row img {
+  margin: 10px;
+  border-radius: 15px;
+}
+.container nav .off-screen-menu .contacts {
+  display: flex;
+  flex-direction: column;
+}
+.container nav .off-screen-menu .contacts h1 {
+  font-size: 21px;
+  font-weight: 700;
+}
+.container nav .off-screen-menu .contacts .title_txt {
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+}
+.container nav .off-screen-menu .contacts p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6E6E6E;
+  width: 300px;
+}
+.container nav .off-screen-menu .icons p {
+  font-size: 21px;
+  font-weight: 700;
+  color: black;
+}
+.container nav .off-screen-menu .icons .images {
+  display: flex;
+  gap: 10px;
+}
+.container nav .off-screen-menu .icons .images .img_bg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  background: #1BBC9B;
+}
+.container nav .off-screen-menu .icons .images .img_bg:hover {
+  background: #434A54;
+  transition: 0.3s ease;
+}
+.container nav .off-screen-menu.active {
+  right: 0;
+}
+.container nav .burger {
+  padding: 1rem;
+  display: flex;
+  display: none;
+}
+.container nav .ham-menu {
+  height: 50px;
+  width: 40px;
+  margin-left: auto;
+  position: relative;
+  cursor: pointer;
+}
+.container nav .ham-menu span {
+  height: 5px;
+  width: 100%;
+  background-color: black;
+  border-radius: 25px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+.container nav .ham-menu span:nth-child(1) {
+  top: 25%;
+}
+.container nav .ham-menu span:nth-child(3) {
+  top: 75%;
+}
+.container nav button {
+  width: 110px;
+  height: 44px;
+  border-radius: 5px;
+  background: #f89e16;
+  border: none;
+}
+.container nav button a {
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+}
+.container header {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 50px;
+}
+.container header h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 6px;
+  margin-bottom: 80px;
+}
+.container header .arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #f89e16;
+}
+.container header .arrow p {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+.container main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container main .ceo-header {
+  border: 3px solid lightgray;
+  border-radius: 15px;
+  margin-bottom: 120px;
+}
+.container main .ceo-message {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 150px;
+}
+.container main .ceo-message .block_item {
+  width: 307.5px;
+  height: 190px;
+  text-align: center;
+}
+.container main .ceo-message .block_item h2 {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 1px;
+}
+.container main .ceo-message .block_item p {
+  width: 230px;
+  font-weight: 400;
+  color: #6E6E6E;
+  margin: 0 auto;
+  margin-bottom: 500px;
+}
+.container main .ceo-message .number_info h2 {
+  font-family: "Reenie Beanie", cursive;
+  color: #1BBC9B;
+  font-size: 30px;
+  font-weight: 500;
+}
+.container main .ceo-message .number_info h1 {
+  width: 500px;
+  font-weight: 700;
+  font-size: 50px;
+}
+.container main .ceo-message .number_info p {
+  color: #6E6E6E;
+  font-size: 25px;
+  line-height: 34px;
+  font-weight: 400;
+  width: 620.75px;
+  margin-bottom: 50px;
+}
+.container main .ceo-message .number_info button {
+  background: #434A54;
+  border: none;
+  border-radius: 5px;
+  width: 140.73px;
+  height: 44px;
+  color: white;
+  text-transform: uppercase;
+}
+.container main .world_number {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+  margin-bottom: 100px;
+}
+.container main .world_number .achievements {
+  display: flex;
+  gap: 30px;
+}
+.container main .world_number .achievements .right_column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container main .world_number .achievements .right_column .achievements_second_block {
+  border-bottom: 3px solid lightgray;
+  border-left: 3px solid lightgray;
+  border-right: 3px solid lightgray;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.container main .world_number .achievements .right_column .achievements_first_block {
+  border: 3px solid lightgray;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.container main .world_number .achievements .left_column {
+  display: flex;
+  align-items: center;
+}
+.container main .world_number .achievements .left_column .line {
+  width: 307.5px;
+  height: 30px;
+  border-bottom: 3px solid lightgray;
+}
+.container main .world_number .achievements .left_column .achievements_third_block {
+  height: 230px;
+  border-radius: 3px;
+  border: 3px solid lightgray;
+}
+.container main .world_number .achievements .block_item {
+  width: 307.5px;
+  height: 190px;
+  text-align: center;
+}
+.container main .world_number .achievements .block_item h2 {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 1px;
+}
+.container main .world_number .achievements .block_item p {
+  width: 230px;
+  font-weight: 400;
+  color: #6E6E6E;
+  margin: 0 auto;
+}
+.container main .world_number .number_info h2 {
+  font-family: "Reenie Beanie", cursive;
+  color: #1BBC9B;
+  font-size: 30px;
+  font-weight: 500;
+}
+.container main .world_number .number_info h1 {
+  width: 500px;
+  font-weight: 700;
+  font-size: 50px;
+}
+.container main .world_number .number_info p {
+  color: #6E6E6E;
+  line-height: 24px;
+  font-weight: 400;
+  width: 620.75px;
+}
+.container main .world_number .number_info button {
+  background: #434A54;
+  border: none;
+  border-radius: 5px;
+  width: 140.73px;
+  height: 44px;
+  color: white;
+  text-transform: uppercase;
+}
+.container main .youtube-video {
+  width: 70%;
+  height: 700px;
+  border-radius: 15px;
+  margin-bottom: 110px;
+}
+.container main .contact_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -100px;
+}
+.container main .contact_label .contact_item {
+  width: 430.98px;
+}
+.container main .contact_label .contact_item .image_w_text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.container main .contact_label .contact_item .image_w_text h2 {
+  position: relative;
+  top: 10px;
+  font-size: 20px;
+}
+.container main .contact_label .contact_item .contact_info {
+  width: 449.98px;
+}
+.container main .contact_label .contact_item .contact_info .spec {
+  width: 350px;
+}
+.container main .contact_label .contact_item .contact_info .spec_mail {
+  width: 419.98px;
+}
+.container main .contact_label .contact_item .contact_info h2 {
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.container main .contact_label .contact_item .contact_info p {
+  color: #6E6E6E;
+  width: 260px;
+  font-weight: 400;
+}
+.container main .contact_label .contact_item .contact_info span {
+  text-decoration: underline;
+  font-weight: 400;
+}
+.container main .contact_form {
+  margin: 0 auto;
+  width: 1350px;
+  height: 820px;
+  border: 2px solid lightgray;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  top: 200px;
+  z-index: 2;
+}
+.container main .contact_form .contact_window {
+  margin-top: -55px;
+  text-align: center;
+}
+.container main .contact_form .contact_window h2 {
+  margin-bottom: -10px;
+  color: #1BBC9B;
+  font-weight: 500;
+  font-size: 29.88px;
+  font-family: "Reenie Beanie", cursive;
+}
+.container main .contact_form .contact_window h1 {
+  margin-bottom: -10px;
+  font-size: 50px;
+  font-weight: 700;
+}
+.container main .contact_form .contact_window p {
+  color: #6E6E6E;
+  line-height: 24px;
+  width: 595.71px;
+  font-weight: 400;
+}
+.container main .contact_form .contact_window span {
+  font-weight: 400;
+  text-decoration: underline;
+}
+.container main .contact_form .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.container main .contact_form .contact input {
+  width: 810px;
+  height: 57px;
+  border-radius: 5px;
+  border: 1px solid #D8D8D8;
+  color: #757575;
+  font-size: 16px;
+  font-weight: 400;
+  background: white;
+}
+.container main .contact_form .contact textarea {
+  background: white;
+  width: 810px;
+  height: 116px;
+  border-radius: 5px;
+  border: 1px solid #D8D8D8;
+  color: #757575;
+  font-size: 14px;
+  font-weight: 400;
+}
+.container main .contact_form .contact input::-moz-placeholder, .container main .contact_form .contact textarea::-moz-placeholder {
+  padding-left: 30px;
+}
+.container main .contact_form .contact input::placeholder,
+.container main .contact_form .contact textarea::placeholder {
+  padding-left: 30px;
+}
+.container main .contact_form .contact textarea::-moz-placeholder {
+  padding-top: 10px;
+}
+.container main .contact_form .contact textarea::placeholder {
+  padding-top: 10px;
+}
+.container main .contact_form .contact button {
+  width: 816px;
+  height: 51px;
+  background: #f89e16;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+.container main iframe {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  top: 7px;
+}
+.container footer {
+  width: 100%;
+  height: 474px;
+  background-image: linear-gradient(rgba(15, 44, 86, 0.706), rgba(49, 49, 49, 0.7)), url("../img/footer.png.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+}
+.container footer h1 {
+  width: 580px;
+  font-size: 50px;
+}
+.container footer .footer_address, .container footer .footer_contact {
+  margin-top: 20px;
+}
+.container footer .footer_address {
+  margin-left: -150px;
+}
+.container footer .footer_address .footer_icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+}
+.container footer .footer_address ul {
+  margin-left: -39px;
+}
+.container footer .footer_address ul li h2 {
+  font-size: 20px;
+}
+.container footer .footer_address ul li p {
+  font-weight: 400;
+  font-size: 16px;
+}
+.container footer .footer_contact button {
+  background: #1BBC9B;
+  width: 181.52px;
+  height: 44px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.container footer .footer_contact button a {
+  color: white;
+}
+.container footer .footer_contact p {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+@media (min-width: 231px) and (max-width: 419px) {
+  .container {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container nav {
+    width: 800px;
+  }
+  .container nav img {
+    position: relative;
+    left: -20px;
+  }
+  .container nav ul li {
+    display: none;
+  }
+  .container nav button {
+    position: relative;
+    left: -13px;
+    display: none;
+  }
+  .container nav .burger {
+    position: relative;
+    left: 13px;
+    display: block;
+  }
+  .container nav .off-screen-menu {
+    margin-top: 100px;
+  }
+  .container nav .off-screen-menu .logo {
+    width: 300px;
+  }
+  .container nav .off-screen-menu .contacts ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    gap: 55px;
+    padding: 0;
+    margin: 0;
+  }
+  .container nav .off-screen-menu .contacts ul li {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .container nav .off-screen-menu .contacts ul li a {
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+  }
+  .container nav .off-screen-menu .contacts ul li a span {
+    font-weight: 400;
+    color: #1BBC9B;
+  }
+  .container nav .off-screen-menu .contacts ul li a:hover {
+    color: #00d2b4;
+    transition: 0.4s ease;
+  }
+  .container main .ceo-header {
+    width: 700px;
+  }
+  .container main .ceo-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container main .ceo-message h1 {
+    position: relative;
+    left: 58px;
+  }
+  .container main .world_number {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .container main .world_number .number_info h1 {
+    position: relative;
+    left: 70px;
+  }
+  .container main .world_number .number_info p {
+    font-size: 27px;
+    line-height: 34px;
+  }
+  .container main .world_number .number_info button {
+    width: 300px;
+    height: 100px;
+    font-size: 24px;
+  }
+  .container main .youtube-video {
+    width: 700px;
+  }
+  .container main .contact_label {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+  }
+  .container main .contact_label .contact_item {
+    margin-bottom: 50px;
+  }
+  .container main .contact_form {
+    width: 700px;
+  }
+  .container main .contact_form .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container main .contact_form .contact .contact_form_input {
+    width: 500px;
+    border: 3px solid lightgray;
+  }
+  .container main .contact_form .contact .contact_form_textarea {
+    width: 500px;
+    border: 3px solid lightgray;
+  }
+  .container main .contact_form .contact button {
+    width: 510px;
+  }
+  .container footer {
+    width: 795px;
+    margin-left: -10px;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+  }
+}/*# sourceMappingURL=style.css.map */
